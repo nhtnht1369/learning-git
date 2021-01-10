@@ -1,0 +1,131 @@
+@import "variables";
+@import "mixins";
+@import "functions";
+
+li {
+  @include yyy(2px, red);
+  margin-top: 10px;
+}
+
+// ------------Oprator--------------
+ul {
+  font-size: $font-size * 2;
+}
+
+// ------------Extend--------------
+.message {
+  color: pink;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.success {
+  @extend .message;
+  color: #000;
+}
+
+// ------------Function--------------
+
+$grid-width: 40px;
+$gutter: 10px;
+
+@function gg($n: 12) {
+  @return $n * $grid-width + ($n - 1) * $gutter;
+}
+
+#sidebar {
+  width: gg(5);
+}
+
+// ------------If--------------
+
+$grid: 24;
+
+@if ($grid == 24) {
+  #container {
+    width: gg(24);
+  }
+} @else if($grid==12) {
+  #container {
+    width: gg(12);
+  }
+} @else {
+  #container {
+    width: gg(5);
+  }
+}
+
+// ------------If example2--------------
+
+$L: 1200px;
+$M: 992px;
+$S: 768px;
+
+@mixin mediaQuery($canvas) {
+  @if $canvas==L {
+    @media only screen and (max-width: $L) {
+      @content;
+    }
+  } @else if $canvas==M {
+    @media only screen and (max-width: $M) {
+      width: gg(10);
+    }
+  } @else if $canvas==S{
+    @media only screen and (max-width: $S) {
+      width: gg(10);
+    }
+  }
+}
+.container {
+  width: gg(24);
+  @include mediaQuery(L){
+    opacity: 0;;
+  }
+}
+
+.footer{
+  background-color: red;
+  @include mediaQuery(M){
+    display: none;
+  };
+}
+
+// ------------For--------------
+
+@for $i from 1 through 3 {
+  .item-#{$i}{
+    width: 100 * $i;
+  }
+}
+
+// ------------While--------------
+$i:6;
+@while ($i > 0) {
+  .p-#{$i}{
+    width: 100 * $i;
+  }
+  $i: $i - 1;
+}
+// ------------Each--------------
+
+@each $i in 1,2,3,4 {
+  .k-#{$i}{
+    width: 100*$i;
+  }
+}
+
+// ------------Each Example2-------------- 
+
+@each $course, $color in (javascript, yellow), (laravel, red) {
+  .#{$course}-icon{
+    background-image: url("/images/#{$course}.png");
+    border: 2px solid $color;
+  }
+}
+
+// ------------Each Example3-------------- 
+@each $header, $size in (h1: 2em, h2: 1.5em, h3: 1.2em )  {
+  #{$header}{
+      font-size: $size;
+  }
+}

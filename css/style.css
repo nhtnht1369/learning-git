@@ -1,0 +1,121 @@
+li {
+  border: 2px solid red;
+  margin-top: 10px;
+}
+
+ul {
+  font-size: 40px;
+}
+
+.message, .success {
+  color: pink;
+  padding: 10px;
+  font-weight: bold;
+}
+
+.success {
+  color: #000;
+}
+
+#sidebar {
+  width: 240px;
+}
+
+#container {
+  width: 1190px;
+}
+
+.container {
+  width: 1190px;
+}
+
+@media only screen and (max-width: 1200px) {
+  .container {
+    opacity: 0;
+  }
+}
+
+.footer {
+  background-color: red;
+}
+
+@media only screen and (max-width: 992px) {
+  .footer {
+    width: 490px;
+  }
+}
+
+.item-1 {
+  width: 100;
+}
+
+.item-2 {
+  width: 200;
+}
+
+.item-3 {
+  width: 300;
+}
+
+.p-6 {
+  width: 600;
+}
+
+.p-5 {
+  width: 500;
+}
+
+.p-4 {
+  width: 400;
+}
+
+.p-3 {
+  width: 300;
+}
+
+.p-2 {
+  width: 200;
+}
+
+.p-1 {
+  width: 100;
+}
+
+.k-1 {
+  width: 100;
+}
+
+.k-2 {
+  width: 200;
+}
+
+.k-3 {
+  width: 300;
+}
+
+.k-4 {
+  width: 400;
+}
+
+.javascript-icon {
+  background-image: url("/images/javascript.png");
+  border: 2px solid yellow;
+}
+
+.laravel-icon {
+  background-image: url("/images/laravel.png");
+  border: 2px solid red;
+}
+
+h1 {
+  font-size: 2em;
+}
+
+h2 {
+  font-size: 1.5em;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+/*# sourceMappingURL=style.css.map */

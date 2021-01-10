@@ -1,0 +1,12 @@
+
+// ------------Mixin & Include--------------
+@mixin yyy($px,$x){
+  border: $px solid $x;
+}
+// ------------Mixin & Include--------------
+ 
+@mixin background-image($url, $repeat: repeat, $position: auto auto) {
+  background-image: url($url);
+  background-repeat: $repeat;
+  background-position: $position; 
+}
